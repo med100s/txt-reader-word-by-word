@@ -3,7 +3,6 @@ import os
 import pyautogui
 import keyboard
 
-
 def breackifspacepressed():
 	if keyboard.is_pressed('space'):  # if key 'q' is pressed 
 			print('You Pressed space Key!')
@@ -15,10 +14,7 @@ def breackifspacepressed():
 						space == False	
 						break	
 
-
-
 f = open('voina-i-mir.txt', 'r', encoding='utf-8')
-
 
 f = str(list(f))
 b = r"!@#$n,'\—«–»:.-(;)"
@@ -38,13 +34,10 @@ for i in f:
 		print(a, i)
 		a += 1
 	else:
-		
 		print(a, i)
 		a += 1
 		sleep(0.01)
-
 		breackifspacepressed()
-			  
 		os.system('cls||clear')
 
 
