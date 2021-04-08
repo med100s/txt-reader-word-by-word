@@ -3,11 +3,7 @@ import os
 import pyautogui
 import keyboard
 
-
-
-
-
-f = open('6158845.txt', 'r', encoding='utf-8')
+f = open('filip_kotler-osnovi_marketinga-1499658489.txt', 'r', encoding='utf-8')
 
 
 f = str(list(f))
@@ -19,28 +15,39 @@ f = [x for x in f if x]
 
 #print(f)
 
-a = 0
-stop = 0
-for i in f:
-	if a == 100000:
-		break
-	if a < stop:              
-		print(a, i)
-		a += 1
-	else:
-		
-		print(a, i)
-		a += 1
-		#sleep(0.01)
+def make_pause(is_pause = False):
+	while True:
+		if keyboard.is_pressed('space'):
+			is_pause = True
 
-		if keyboard.is_pressed('p') and keyboard.is_pressed('space'):  # if key 'q' is pressed 
-			print('You Pressed Pause Key!')
-			#if space == False:
-			is_space = True
-			while is_space == True:
-					sleep(0.1)
-					if keyboard.is_pressed('p') and keyboard.is_pressed('space'):
-						is_space == False	
-						break	
-			  
-		os.system('cls||clear')
+		while is_pause == True:
+			print('pause started')
+			sleep(3)
+			if keyboard.is_pressed('space'):
+				print('pause stoped')
+				break
+		break
+
+def show_data(f):
+	is_pause = False
+	word_id = 0	
+	stop = 1000
+	for i in f:
+		if word_id == 100000:
+			break
+		if word_id < stop:              
+			print(word_id, i)
+			word_id += 1
+		else:
+			
+			print(word_id, i)
+			word_id += 1
+			sleep(1)
+
+			make_pause()
+
+
+
+			os.system('cls||clear')
+
+show_data(f)
